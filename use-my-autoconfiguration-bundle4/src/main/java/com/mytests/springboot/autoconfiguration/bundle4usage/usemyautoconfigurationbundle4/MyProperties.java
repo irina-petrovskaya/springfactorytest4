@@ -9,6 +9,7 @@ public class MyProperties {
 
     private String prop1;
     private String prop2;
+    private String prop3;
 
     public String getProp1() {
         return prop1;
@@ -24,5 +25,13 @@ public class MyProperties {
 
     public void setProp2(String prop2) {
         this.prop2 = prop2;
+    }
+
+    public String getProp3() {
+        return prop3;
+    }
+
+    public void setProp3(String prop3) {
+        this.prop3 = prop3;
     }
 }
