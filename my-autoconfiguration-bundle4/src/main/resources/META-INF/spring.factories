@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.ConditionalOnPropertyWithInnerConfig1
+com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.MainConfig
+
