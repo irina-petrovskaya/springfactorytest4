@@ -1,4 +1,4 @@
-package com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs;
+package com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.scanned;
 
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean1;
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean2;
