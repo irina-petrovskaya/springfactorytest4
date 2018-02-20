@@ -18,6 +18,10 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
     @Autowired
     private Environment environment;
 
+    // error: both beans are shown as available
+    // with myprops.prop1 == prop1 and myprops.prop2 == invalid
+    // bean2 should be null since myprops.prop2 has invalid value
+
     @Autowired(required = false)
     private Bean1 mybean_ConditionalOnPropertyWithInnerConfig1_bean1;
 
