@@ -17,7 +17,7 @@ public class ConditionalOnPropertyWithInnerConfig1 {
 
     @Configuration
     @ConditionalOnProperty(name = "myprops.prop2", havingValue = "prop2")
-    static class ConditionalOnPropertyWithInnerConfig1_Inner {
+    public static class ConditionalOnPropertyWithInnerConfig1_Inner {
 
         @Bean(name = "mybean_ConditionalOnPropertyWithInnerConfig1_inner_bean2")
         public Bean2 bean2() {

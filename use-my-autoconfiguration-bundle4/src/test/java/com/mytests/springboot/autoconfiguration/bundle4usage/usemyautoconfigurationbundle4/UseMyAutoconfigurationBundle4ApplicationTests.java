@@ -27,26 +27,39 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
 
     @Test
     public void testConditionalOnPropertyInner() {
-        String prop1 = environment.getProperty("myprops.prop1");
-        String prop2 = environment.getProperty("myprops.prop2");
-        System.out.println("prop1="+prop1+", prop2="+prop2);
-        if(prop1==null){prop1 = "";}
-        if(prop2==null){prop2 = "";}
-        if((prop1.equals("prop1"))&&(prop2.equals("prop2"))){
+        String prop1 = "";
+        String prop2 = "";
+        if (environment.getProperty("myprops.prop1") != null) {
+            prop1 = environment.getProperty("myprops.prop1");
+        }
+
+        if (environment.getProperty("myprops.prop2") != null) {
+            prop2 = environment.getProperty("myprops.prop2");
+        }
+        System.out.println("prop1=" + prop1 + ", prop2=" + prop2);
+
+        if ((prop1.equals("prop1")) && (prop2.equals("prop2"))) {
             System.out.println("both beans should be available");
             Assert.assertNotNull(mybean_ConditionalOnPropertyWithInnerConfig1_bean1);
             Assert.assertNotNull(mybean_ConditionalOnPropertyWithInnerConfig1_inner_bean2);
         } else {
-            if(prop1.equals("prop1")){
+            if (prop1.equals("prop1")) {
                 System.out.println("only bean1 should be available");
                 Assert.assertNotNull(mybean_ConditionalOnPropertyWithInnerConfig1_bean1);
                 Assert.assertNull(mybean_ConditionalOnPropertyWithInnerConfig1_inner_bean2);
             } else {
-                System.out.println("both beans should be not available");
-                Assert.assertNull(mybean_ConditionalOnPropertyWithInnerConfig1_bean1);
-                Assert.assertNull(mybean_ConditionalOnPropertyWithInnerConfig1_inner_bean2);
+                if (prop2.equals("prop2")) {
+                    System.out.println("only bean2 should be available");
+                    Assert.assertNull(mybean_ConditionalOnPropertyWithInnerConfig1_bean1);
+                    Assert.assertNotNull(mybean_ConditionalOnPropertyWithInnerConfig1_inner_bean2);
+
+                } else {
+                    System.out.println("both beans should be not available");
+                    Assert.assertNull(mybean_ConditionalOnPropertyWithInnerConfig1_bean1);
+                    Assert.assertNull(mybean_ConditionalOnPropertyWithInnerConfig1_inner_bean2);
+                }
             }
         }
-    }
 
+    }
 }
