@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConditionalOnProperty(name = "myprops.prop1")
+@ConditionalOnProperty(name = "myprops.prop1", havingValue = "prop1")
 public class ConditionalOnPropertyWithInnerConfig1 {
 
     @Bean(name = "ConditionalOnPropertyWithInnerConfig1_bean1")
@@ -16,7 +16,7 @@ public class ConditionalOnPropertyWithInnerConfig1 {
     }
 
     @Configuration
-    @ConditionalOnProperty("myprops.prop2")
+    @ConditionalOnProperty(name = "myprops.prop2", havingValue = "prop2")
     static class ConditionalOnPropertyWithInnerConfig1_Inner {
 
         @Bean(name = "ConditionalOnPropertyWithInnerConfig1_inner_bean2")
