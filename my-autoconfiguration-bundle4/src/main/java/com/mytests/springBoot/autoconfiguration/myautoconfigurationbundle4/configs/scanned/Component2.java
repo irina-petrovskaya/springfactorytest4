@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 
-@Component("Component2")
+@Component("component2")
 @ConditionalOnProperty(name="myprops.prop2", havingValue = "prop2")
 public class Component2 {
 
