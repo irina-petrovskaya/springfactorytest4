@@ -6,9 +6,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
-@EnableConfigurationProperties
+@Import(ConditionalBeansConfig.class)
 public class UseMyAutoconfigurationBundle4Application implements CommandLineRunner {
 
     @Autowired
