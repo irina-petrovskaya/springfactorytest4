@@ -1,3 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.MainConfig
+com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.MainConfig,\
+com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.NewConfig  
 

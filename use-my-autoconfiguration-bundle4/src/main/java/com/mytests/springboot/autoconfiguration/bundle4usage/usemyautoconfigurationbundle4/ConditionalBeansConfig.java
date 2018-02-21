@@ -7,6 +7,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ConditionalBeansConfig {
 
+   // @Bean(name="newconfig_condition")
+    public String s0() {
+        return "newconfig_condition";
+    }
 
    //@Bean(name="importedconfig2inner_condition")
     public String s1() {

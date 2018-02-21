@@ -2,6 +2,7 @@ package com.mytests.springboot.autoconfiguration.bundle4usage.usemyautoconfigura
 
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean1;
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean2;
+import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean3;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -65,6 +66,24 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
                     Assert.assertNull(bean2_from_importedconfig2inner);
                 }
             }
+        }
+    }
+
+    // same error - for simple case (registered top-level configuration conditional on bean presence
+
+    @Autowired(required = false)
+    private Bean3 bean3_fromnewconfig;
+    @Autowired(required = false) @Qualifier("newconfig_condition")
+    private String newconfig_condition;
+
+    @Test
+    public void testSimpleBeanCondition() {
+        if (newconfig_condition != null) {
+            System.out.println("condition for NewConfig matches, bean3 should be available");
+            Assert.assertNotNull(bean3_fromnewconfig);
+        } else {
+            System.out.println("condition for NewConfig doesn't match, bean3 should not be available");
+            Assert.assertNotNull(bean3_fromnewconfig);
         }
     }
 }
