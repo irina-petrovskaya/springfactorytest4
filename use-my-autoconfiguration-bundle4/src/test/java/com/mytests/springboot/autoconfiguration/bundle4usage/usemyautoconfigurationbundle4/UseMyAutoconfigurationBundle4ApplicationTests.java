@@ -14,6 +14,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class UseMyAutoconfigurationBundle4ApplicationTests {
 
+    // error: though condition beans are not available,
+    // the beans that should be available depending on conditional ones presence are
+    // shown as available:
 
     @Autowired(required = false)
     @Qualifier("importedconfig1_condition")
