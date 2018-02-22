@@ -10,6 +10,7 @@ public class MyProperties {
     private String prop1;
     private String prop2;
 
+
     public String getProp1() {
         return prop1;
     }
