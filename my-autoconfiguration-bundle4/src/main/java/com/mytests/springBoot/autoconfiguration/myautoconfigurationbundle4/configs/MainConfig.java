@@ -56,7 +56,7 @@ public class MainConfig {
     }
 
     /**
-     * registered with trailing [space]/[space]: no gutter icon,
+     * registered with trailing /: no gutter icon,
      * bean is not resolved
      */
     public static class InnerConfig4{

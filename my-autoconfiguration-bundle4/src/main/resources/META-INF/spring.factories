@@ -3,4 +3,4 @@ com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.Main
 com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.MainConfig.InnerConfig2,\
 com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.MainConfig$InnerContainer$InnerConfig3,\
 com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.MainConfig.InnerConfig4\
-  
+ 
