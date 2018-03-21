@@ -21,10 +21,14 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
     @Autowired(required = false)
     private Bean1 bean1;
 
-
+    @Autowired(required = false)
+    private Bean2 bean2;
     @Test
-    public void test() {
+    public void testBean1() {
        Assert.assertNotNull(bean1);
     }
-
+    @Test
+    public void testBean2() {
+        Assert.assertNotNull(bean2);
+    }
 }

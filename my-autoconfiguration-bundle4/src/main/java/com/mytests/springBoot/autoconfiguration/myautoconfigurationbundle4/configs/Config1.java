@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConditionalOnProperty(prefix = "myprops", name = {"custom1.my-enum1", "custom2.str2"})
-//@ConditionalOnProperty(prefix = "myprops.custom1.", name = "int1")
 public class Config1 {
 
     @Bean
