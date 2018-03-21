@@ -18,10 +18,13 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
     @Autowired
     private Environment environment;
 
+    @Autowired(required = false)
+    private Bean1 bean1;
+
 
     @Test
     public void test() {
-
+       Assert.assertNotNull(bean1);
     }
 
 }
