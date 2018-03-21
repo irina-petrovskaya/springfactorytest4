@@ -16,6 +16,15 @@ public class CustomProps1 {
     MyEnum1 myEnum1;
     List<String> stringList1;
     Map<MyEnum1, String> map1;
+    boolean flag1;
+
+    public boolean isFlag1() {
+        return flag1;
+    }
+
+    public void setFlag1(boolean flag1) {
+        this.flag1 = flag1;
+    }
 
     public String getStr1() {
         return str1;

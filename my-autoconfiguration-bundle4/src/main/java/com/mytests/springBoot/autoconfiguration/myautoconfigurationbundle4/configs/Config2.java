@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
  * Project: springfactorytest4
  * *******************************
  */
-@ConditionalOnProperty(prefix = "myprops.custom1.", name = "int1",havingValue = "10")
+@ConditionalOnProperty(prefix = "myprops.custom1.", name = "flag1",havingValue = "true")
 public class Config2 {
     @Bean
     public Bean2 bean2() {
