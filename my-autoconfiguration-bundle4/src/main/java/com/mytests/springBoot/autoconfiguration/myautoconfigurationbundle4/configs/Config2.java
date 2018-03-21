@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
  * Project: springfactorytest4
  * *******************************
  */
-@ConditionalOnProperty(prefix = "myprops.custom1.", name = "flag1",havingValue = "true")
+@ConditionalOnProperty(prefix = "myprops.custom1.", name = "flag1",havingValue = "true") // TODO: check values completion using hints
 public class Config2 {
     @Bean
     public Bean2 bean2() {
