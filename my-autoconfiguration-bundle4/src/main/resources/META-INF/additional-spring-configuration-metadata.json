@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "management.health.uptime.enabled",
+      "type": "java.lang.Boolean",
+      "description": "custom health indicator UptimeIndicator enabling."
+    },
+    {
+      "name": "management.health.worktime.enabled",
+      "type": "java.lang.Boolean",
+      "description": "custom health indicator WorkTimeHealthIndicator enabling."
+    }
+  ]
+}
