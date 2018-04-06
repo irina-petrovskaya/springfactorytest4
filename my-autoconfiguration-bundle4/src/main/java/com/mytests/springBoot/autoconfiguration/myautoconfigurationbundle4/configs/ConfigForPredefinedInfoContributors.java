@@ -5,7 +5,8 @@
 package com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs;
 
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean1;
-import org.springframework.boot.actuate.autoconfigure.info.ConditionalOnEnabledInfoContributor;
+
+import org.springframework.boot.actuate.autoconfigure.ConditionalOnEnabledInfoContributor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

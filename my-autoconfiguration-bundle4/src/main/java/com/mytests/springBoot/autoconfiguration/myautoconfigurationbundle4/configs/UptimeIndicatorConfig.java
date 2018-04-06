@@ -2,7 +2,8 @@ package com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.conf
 
 
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.health_indicators.UptimeIndicator;
-import org.springframework.boot.actuate.autoconfigure.health.ConditionalOnEnabledHealthIndicator;
+
+import org.springframework.boot.actuate.autoconfigure.ConditionalOnEnabledHealthIndicator;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
