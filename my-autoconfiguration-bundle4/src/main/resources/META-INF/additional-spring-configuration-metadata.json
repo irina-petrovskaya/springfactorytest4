@@ -9,6 +9,11 @@
       "name": "management.health.worktime.enabled",
       "type": "java.lang.Boolean",
       "description": "custom health indicator WorkTimeHealthIndicator enabling."
+    },
+    {
+      "name": "management.info.custom.enabled",
+      "type": "java.lang.Boolean",
+      "description": "custom info contributor."
     }
   ]
 }
