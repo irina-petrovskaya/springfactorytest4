@@ -2,7 +2,9 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.UptimeIndicatorConfig,\
 com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.WorkTimeHealthIndicatorConfig,\
 com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.ConfigForPredefinedInfoContributors,\
-com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.CustomInfoContributorConfig
+com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.CustomInfoContributorConfig,\
+  com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.ConfigsForManagementPort\
+
 
   
 
