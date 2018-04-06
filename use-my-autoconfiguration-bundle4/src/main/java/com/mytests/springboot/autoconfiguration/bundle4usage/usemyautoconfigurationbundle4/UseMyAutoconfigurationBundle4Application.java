@@ -23,7 +23,7 @@ public class UseMyAutoconfigurationBundle4Application implements CommandLineRunn
         String[] beans = ctx.getBeanDefinitionNames();
         System.out.println("**************************************************************************");
         for (String _bean : beans) {
-            if (_bean.toString().endsWith("HealthIndicator")) {
+            if ((_bean.toString().endsWith("HealthIndicator")) || (_bean.toString().startsWith("bean"))) {
                 System.out.println(_bean);
             }
         }
