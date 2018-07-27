@@ -79,7 +79,7 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
     @Test
     public void testSimpleBeanCondition() {
         if (newconfig_condition != null) {
-            System.out.println("condition for NewConfig matches, bean3 should be available");
+            System.out.println("condition for NewConfig matches,  bean3 should be available");
             Assert.assertNotNull(bean3_fromnewconfig);
         } else {
             System.out.println("condition for NewConfig doesn't match, bean3 should not be available");
