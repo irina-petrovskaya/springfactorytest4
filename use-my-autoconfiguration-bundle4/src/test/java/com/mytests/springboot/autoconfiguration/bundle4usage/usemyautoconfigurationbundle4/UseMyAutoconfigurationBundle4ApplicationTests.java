@@ -29,6 +29,14 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
     @Autowired @Qualifier("bean40")
     private Bean4 bean40;
 
+    @Autowired @Qualifier("bean11")
+    private Bean1 bean11;
+    @Autowired @Qualifier("bean21")
+    private Bean2 bean21;
+    @Autowired @Qualifier("bean31")
+    private Bean3 bean31;
+    @Autowired @Qualifier("bean41")
+    private Bean4 bean41;
 
     @Test
     public void testStaticInnerConfigs() {
@@ -38,4 +46,11 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
         Assert.assertNotNull(bean40);
     }
 
+    @Test
+    public void testNonStaticInnerConfigs() {
+        Assert.assertNotNull(bean11);
+        Assert.assertNotNull(bean21);
+        Assert.assertNotNull(bean31);
+        Assert.assertNotNull(bean41);
+    }
 }
