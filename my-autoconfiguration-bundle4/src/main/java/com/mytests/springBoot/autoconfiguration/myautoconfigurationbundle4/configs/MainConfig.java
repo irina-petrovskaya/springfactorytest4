@@ -11,4 +11,7 @@ import org.springframework.context.annotation.ImportResource;
 @ConditionalOnProperty(name = "myprops.prop1", havingValue = "prop1")
 @Import(ExtraConfig.class)
 public class MainConfig {
+    // this class only imports another configurations.
+    // the beans defined in these configurations should be available
+    // if the property myprops.prop1 is set and has value 'prop1'
 }

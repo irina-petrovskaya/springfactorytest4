@@ -19,10 +19,11 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
     private Environment environment;
 
     @Autowired(required = false)
-    Bean1 bean1;
+    Bean1 bean1;  // bean from the imported xml config
 
     @Autowired(required = false)
-    Bean2 bean2;
+    Bean2 bean2; // bean from the imported java config
+
     @Autowired
     private MyProperties myProperties;
 
