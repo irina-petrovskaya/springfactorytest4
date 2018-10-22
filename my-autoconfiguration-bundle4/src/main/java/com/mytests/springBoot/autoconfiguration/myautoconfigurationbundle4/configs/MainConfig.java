@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 
 @Configuration
-@ImportResource("xml-config.xml")
+@ImportResource("classpath*:xml-config.xml")
 @ConditionalOnProperty(name = "myprops.prop1", havingValue = "prop1")
 @Import(ExtraConfig.class)
 public class MainConfig {
