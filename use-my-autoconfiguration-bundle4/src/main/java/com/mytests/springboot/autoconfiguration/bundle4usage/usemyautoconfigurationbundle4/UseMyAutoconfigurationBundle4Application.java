@@ -15,7 +15,6 @@ import org.springframework.context.annotation.Primary;
 
 @SpringBootApplication
 @EnableConfigurationProperties
-//@Primary
 public class UseMyAutoconfigurationBundle4Application implements CommandLineRunner {
 
     @Autowired
@@ -26,7 +25,7 @@ public class UseMyAutoconfigurationBundle4Application implements CommandLineRunn
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         String[] beans = ctx.getBeanDefinitionNames();
         System.out.println("**************************************************************************");
         for (String _bean : beans) {

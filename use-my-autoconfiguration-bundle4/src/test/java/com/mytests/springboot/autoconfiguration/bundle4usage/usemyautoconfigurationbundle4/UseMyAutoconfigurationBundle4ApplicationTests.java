@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.env.Environment;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
@@ -17,8 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class UseMyAutoconfigurationBundle4ApplicationTests {
 
 
-    @Autowired
-    private Environment environment;
+
     @Autowired
     private Bean1 b1;
     @Autowired
@@ -36,8 +34,8 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
         System.out.println("=================== test started ==================");
         Assert.assertEquals("bean1_from_client", b1.toString());
         Assert.assertEquals("bean2_autoconfigured", b2.toString());
-        Assert.assertEquals("compo2_autoconfigured", c2.getId());
         Assert.assertEquals("compo1_from_client", c1.getId());
+        Assert.assertEquals("compo2_autoconfigured", c2.getId());
 
     }
 
