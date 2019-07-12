@@ -39,12 +39,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.0.3.RELEASE</version>
+            <version>5.2.0.BUILD-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
     <properties>
-        <spring-boot-version>2.1.0.BUILD-SNAPSHOT</spring-boot-version>
+        <spring-boot-version>2.2.0.BUILD-SNAPSHOT</spring-boot-version>
     </properties>
     <repositories>
         <repository>
