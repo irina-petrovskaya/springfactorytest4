@@ -1,0 +1,10 @@
+# Default ignored files
+/.idea
+
+# Project exclude paths
+/my-autoconfiguration-bundle4/target/
+/use-my-autoconfiguration-bundle4/target/
+
+/springfactorytest4.iml
+/my-autoconfiguration-bundle4/my-autoconfiguration-bundle4.iml
+/use-my-autoconfiguration-bundle4/use-my-autoconfiguration-bundle4.iml
