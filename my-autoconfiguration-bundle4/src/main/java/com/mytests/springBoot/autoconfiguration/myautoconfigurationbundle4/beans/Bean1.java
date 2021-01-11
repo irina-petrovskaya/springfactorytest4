@@ -7,4 +7,13 @@ package com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.bean
  * *
  */
 public class Bean1 {
+    public String getDescr() {
+        return descr;
+    }
+
+    private final String descr;
+
+    public Bean1(String s) {
+        this.descr = s;
+    }
 }
