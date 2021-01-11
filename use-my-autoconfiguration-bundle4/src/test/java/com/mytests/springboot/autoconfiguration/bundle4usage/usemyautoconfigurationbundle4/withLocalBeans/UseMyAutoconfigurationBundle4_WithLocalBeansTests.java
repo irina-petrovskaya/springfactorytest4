@@ -13,7 +13,11 @@ import org.springframework.util.Assert;
 
 @SpringBootTest
 public class UseMyAutoconfigurationBundle4_WithLocalBeansTests {
-
+    // since all autoconfigured beans are not available due to the broken  
+    // @ConditionalOnMissingBean annotation conditions 
+    // (all beans that should be missing are present),
+    // only the local beans should be suggested for autowiring
+    // (IDEA suggests both local and bundle ones)
 
    
     @Autowired(required = false)

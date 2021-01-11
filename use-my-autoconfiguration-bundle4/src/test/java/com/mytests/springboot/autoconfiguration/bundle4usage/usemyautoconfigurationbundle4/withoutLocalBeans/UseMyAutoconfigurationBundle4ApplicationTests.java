@@ -13,7 +13,10 @@ import org.springframework.util.Assert;
 @SpringBootTest
 public class UseMyAutoconfigurationBundle4ApplicationTests {
 
-
+    // though all autoconfigured beans are not available due to the broken  
+    // @ConditionalOnMissingBean annotation conditions 
+    // (all beans that should be missing are present),
+    // IDEA shows these beans as available
     
     @Autowired(required = false)
     private Bean0 bean0;
