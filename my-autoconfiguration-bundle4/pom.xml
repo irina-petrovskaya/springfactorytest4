@@ -44,7 +44,7 @@
 
     </dependencies>
     <properties>
-        <spring-boot-version>2.2.0.BUILD-SNAPSHOT</spring-boot-version>
+        <spring-boot-version>2.4.0</spring-boot-version>
     </properties>
     <repositories>
         <repository>
