@@ -41,10 +41,16 @@
             <artifactId>spring-context</artifactId>
             <version>5.0.3.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot-version}</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
     <properties>
-        <spring-boot-version>2.0.0.BUILD-SNAPSHOT</spring-boot-version>
+        <spring-boot-version>2.4.0</spring-boot-version>
     </properties>
     <repositories>
         <repository>

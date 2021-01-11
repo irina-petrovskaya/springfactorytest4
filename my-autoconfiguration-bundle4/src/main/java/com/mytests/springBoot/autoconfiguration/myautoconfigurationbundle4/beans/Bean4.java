@@ -6,5 +6,5 @@ package com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.bean
  * <p>Project: springfactorytest4</p>
  * *
  */
-public class Bean1 {
+public class Bean4 {
 }

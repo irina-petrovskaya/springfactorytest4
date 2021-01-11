@@ -1,14 +1,10 @@
 package com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans;
 
+/**
+ * *
+ * <p>Created by irina on 11.01.2021.</p>
+ * <p>Project: springfactorytest4</p>
+ * *
+ */
 public class Bean2 {
-    private final String id;
-
-    public Bean2(String id) {
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return id;
-    }
 }
