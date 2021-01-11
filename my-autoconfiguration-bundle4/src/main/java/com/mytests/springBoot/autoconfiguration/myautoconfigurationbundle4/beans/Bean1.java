@@ -1,14 +1,14 @@
 package com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans;
 
 public class Bean1 {
-    private final String id;
+    
+    private BeanService1 beanService1;
 
-    public Bean1(String id) {
-        this.id = id;
+    public Bean1(BeanService1 beanService1) {
+        this.beanService1 = beanService1;
     }
 
-    @Override
-    public String toString() {
-        return id;
+    public BeanService1 getBeanService1() {
+        return beanService1;
     }
 }
