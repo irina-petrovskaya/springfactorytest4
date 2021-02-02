@@ -12,7 +12,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-@EnableConfigurationProperties
+//@EnableConfigurationProperties
 public class UseMyAutoconfigurationBundle4Application implements CommandLineRunner {
 
     @Autowired
