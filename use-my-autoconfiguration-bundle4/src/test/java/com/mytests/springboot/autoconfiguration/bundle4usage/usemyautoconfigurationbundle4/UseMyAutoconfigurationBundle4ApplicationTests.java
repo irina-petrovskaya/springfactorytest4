@@ -12,6 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Objects;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class UseMyAutoconfigurationBundle4ApplicationTests {
@@ -26,20 +28,21 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
     // shown as not available for autowiring though SB finds them normally
 
     @Autowired(required = false)
-    Component1 component1;
-    @Autowired(required = false)
+    Component1 component1;      // myprops.prop1 == prop1
+    @Autowired(required = false)  // myprops.prop1 == prop1
     private Bean1 bean1_from_component1;
-    @Autowired(required = false)
+    @Autowired(required = false)  // myprops.prop2 == prop2
     Component2 component2;
-    @Autowired(required = false)
+    @Autowired(required = false)  // myprops.prop3 == prop3
     private Component2.Component2Inner component2Inner;
-    @Autowired(required = false)
+    @Autowired(required = false)  // myprops.prop3 == prop3
     private Bean2 bean2_from_component2inner;
 
 
     @Test
-    public void testComponents() {
-       if(environment.getProperty("myprops.prop1").equals("prop1")&& environment.getProperty("myprops.prop2").equals("prop2")&& environment.getProperty("myprops.prop3").equals("prop2")){
+    public void testComponentsIfAllConditionsMatch() {
+       if(Objects.equals(environment.getProperty("myprops.prop1"), "prop1") && Objects.equals(environment.getProperty("myprops.prop2"), "prop2") && Objects.equals(environment.getProperty("myprops.prop3"), "prop2")){
+           System.out.println("conditions for all components are satisifed");
            Assert.assertNotNull(component1);
            Assert.assertNotNull(component2);
            Assert.assertNotNull(component2Inner);
@@ -48,4 +51,32 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
        }
     }
 
+    @Test
+    public void testProp1DoesNotMatch() {
+        if(!Objects.equals(environment.getProperty("myprops.prop1"), "prop1")){
+            System.out.println("condition for component1 and bean1_from_component1 is not satisifed");
+            Assert.assertNull(component1);
+            Assert.assertNull(bean1_from_component1);
+            
+        }
+    }
+    @Test
+    public void testProp2DoesNotMatch() {
+        if(!Objects.equals(environment.getProperty("myprops.prop2"), "prop2")){
+            System.out.println("condition for component2 is not satisifed");
+            Assert.assertNull(component2);
+
+
+        }
+    }
+
+    @Test
+    public void testProp3DoesNotMatch() {
+        if(!Objects.equals(environment.getProperty("myprops.prop3"), "prop3")){
+            System.out.println("condition for component2Inner and bean2_from_component2Inner is not satisifed");
+            Assert.assertNull(component2Inner);
+            Assert.assertNull(bean2_from_component2inner);
+
+        }
+    }
 }
