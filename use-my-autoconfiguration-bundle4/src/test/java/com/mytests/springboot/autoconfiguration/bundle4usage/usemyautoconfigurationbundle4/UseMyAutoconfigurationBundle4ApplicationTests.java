@@ -2,8 +2,10 @@ package com.mytests.springboot.autoconfiguration.bundle4usage.usemyautoconfigura
 
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean1;
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean2;
+import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean3;
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.scanned.Component1;
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.scanned.Component2;
+import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.scanned.ConditionalConfig;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,16 +40,23 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
     @Autowired(required = false)  // myprops.prop3 == prop3
     private Bean2 bean2_from_component2inner;
 
-
+   @Autowired(required = false) // myprops.prop4 == prop4
+    ConditionalConfig conditionalConfig;
+   @Autowired(required = false)  // myprops.prop4 == prop4
+    Bean3 beanFromConditionalConfig;
+   
     @Test
     public void testComponentsIfAllConditionsMatch() {
-       if(Objects.equals(environment.getProperty("myprops.prop1"), "prop1") && Objects.equals(environment.getProperty("myprops.prop2"), "prop2") && Objects.equals(environment.getProperty("myprops.prop3"), "prop2")){
+       if(Objects.equals(environment.getProperty("myprops.prop1"), "prop1") && Objects.equals(environment.getProperty("myprops.prop2"), "prop2") && Objects.equals(environment.getProperty("myprops.prop3"), "prop2")&& Objects.equals(environment.getProperty("myprops.prop4"), "prop4")){
            System.out.println("conditions for all components are satisifed");
            Assert.assertNotNull(component1);
            Assert.assertNotNull(component2);
            Assert.assertNotNull(component2Inner);
            Assert.assertNotNull(bean1_from_component1);
            Assert.assertNotNull(bean2_from_component2inner);
+           Assert.assertNotNull(conditionalConfig);
+           Assert.assertNotNull(beanFromConditionalConfig);
+           
        }
     }
 
@@ -76,6 +85,15 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
             System.out.println("condition for component2Inner and bean2_from_component2Inner is not satisifed");
             Assert.assertNull(component2Inner);
             Assert.assertNull(bean2_from_component2inner);
+
+        }
+    }
+    @Test
+    public void testProp4DoesNotMatch() {
+        if(!Objects.equals(environment.getProperty("myprops.prop4"), "prop4")){
+            System.out.println("condition for conditionalConfig and beanFromConditionalConfig is not satisifed");
+            Assert.assertNull(conditionalConfig);
+            Assert.assertNull(beanFromConditionalConfig);
 
         }
     }
