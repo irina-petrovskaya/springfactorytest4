@@ -17,7 +17,6 @@ import java.util.Objects;
 @SpringBootTest
 public class UseMyAutoconfigurationBundle4ApplicationTests {
 
-
     @Autowired
     private Environment environment;
 
