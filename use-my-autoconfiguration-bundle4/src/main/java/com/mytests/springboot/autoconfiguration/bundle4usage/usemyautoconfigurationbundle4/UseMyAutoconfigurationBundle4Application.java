@@ -2,8 +2,10 @@ package com.mytests.springboot.autoconfiguration.bundle4usage.usemyautoconfigura
 
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean1;
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean2;
+import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean3;
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.ConditionalConfig1;
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.ConditionalConfig2;
+import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.ConditionalConfig3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,6 +28,13 @@ public class UseMyAutoconfigurationBundle4Application implements CommandLineRunn
     ConditionalConfig2 conditionalConfig2;
     @Autowired(required = false)  // myprops.prop2 is defined and not false
     Bean2 bean2;
+    
+    @Autowired(required = false)
+    private ConditionalConfig3 conditionalConfig3;  // myprops.prop5 is not defined or is not false
+    @Autowired(required = false)
+    private Bean3 bean3; // myprops.prop5 is not defined or is not false
+
+
     public static void main(String[] args) {
         SpringApplication.run(UseMyAutoconfigurationBundle4Application.class, args);
     }

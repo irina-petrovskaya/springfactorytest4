@@ -11,7 +11,8 @@ public class MyProperties {
     private String prop2;
     private String prop3;
     private String prop4;
-
+    private boolean prop5;
+    
     public String getProp1() {
         return prop1;
     }
@@ -42,5 +43,13 @@ public class MyProperties {
 
     public void setProp4(String prop4) {
         this.prop4 = prop4;
+    }
+
+    public boolean isProp5() {
+        return prop5;
+    }
+
+    public void setProp5(boolean prop5) {
+        this.prop5 = prop5;
     }
 }
