@@ -25,28 +25,29 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
     @Autowired(required = false)   // myprops.prop1 == prop1
     Bean1 bean1;
     
-    @Autowired(required = false)  // myprops.prop2 is defined
+    @Autowired(required = false)  // myprops.prop2 is defined and is not false
     ConditionalConfig2 conditionalConfig2;
-    @Autowired(required = false)  // myprops.prop2 is defined
+    @Autowired(required = false)  // myprops.prop2 is defined  and is not false
     Bean2 bean2;
 
     @Test
     void testAllConditionsMatchingCase() {
         if(Objects.equals(environment.getProperty("myprops.prop1"), "prop1") && environment.getProperty("myprops.prop2") != null){
-            System.out.println("conditions for all components are satisifed");
+            if(!Objects.equals(environment.getProperty("myprops.prop2"), "false")) {
+                System.out.println("conditions for all components are satisfied");
 
-            Assert.notNull(conditionalConfig1, "conditionalConfig1 is not enabled");
-            Assert.notNull(bean1, "bean1 is not enabled");
-            Assert.notNull(conditionalConfig2, "conditionalConfig2 is not enabled");
-            Assert.notNull(bean2, "bean2 is not enabled");
-            
+                Assert.notNull(conditionalConfig1, "conditionalConfig1 is not enabled");
+                Assert.notNull(bean1, "bean1 is not enabled");
+                Assert.notNull(conditionalConfig2, "conditionalConfig2 is not enabled");
+                Assert.notNull(bean2, "bean2 is not enabled");
+            }
         }   
     }
 
     @Test
     void testProp1NotMatchingCase() {
         if(!Objects.equals(environment.getProperty("myprops.prop1"), "prop1")){
-            System.out.println("condition for conditionalConfig1 and bean1 is not satisifed");
+            System.out.println("condition for conditionalConfig1 and bean1 is not satisfied");
             Assert.isNull(conditionalConfig1, "conditionalConfig1 enabled");
             Assert.isNull(bean1, "bean1 is enabled");
         } 
@@ -55,7 +56,7 @@ public class UseMyAutoconfigurationBundle4ApplicationTests {
     @Test
     void testProp2NotMatchingCase() {
         if(environment.getProperty("myprops.prop2") == null){
-            System.out.println("condition for conditionalConfig2 and bean2 is not satisifed");
+            System.out.println("condition for conditionalConfig2 and bean2 is not satisfied (property is not set)");
 
             Assert.isNull(conditionalConfig2, "conditionalConfig1 is enabled");
             Assert.isNull(bean2, "bean1 is enabled");

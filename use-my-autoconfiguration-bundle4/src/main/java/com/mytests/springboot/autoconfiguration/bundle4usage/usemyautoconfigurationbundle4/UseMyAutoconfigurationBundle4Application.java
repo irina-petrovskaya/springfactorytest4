@@ -16,13 +16,15 @@ public class UseMyAutoconfigurationBundle4Application implements CommandLineRunn
 
     @Autowired
     ApplicationContext ctx;
+    
     @Autowired(required = false)  // myprops.prop1 == prop1
     ConditionalConfig1 conditionalConfig1;
     @Autowired(required = false)   // myprops.prop1 == prop1
     Bean1 bean1;
-    @Autowired(required = false)  // myprops.prop2 is defined
+    
+    @Autowired(required = false)  // myprops.prop2 is defined and not false
     ConditionalConfig2 conditionalConfig2;
-    @Autowired(required = false)  // myprops.prop2 is defined
+    @Autowired(required = false)  // myprops.prop2 is defined and not false
     Bean2 bean2;
     public static void main(String[] args) {
         SpringApplication.run(UseMyAutoconfigurationBundle4Application.class, args);
