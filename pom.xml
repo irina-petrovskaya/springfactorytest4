@@ -6,7 +6,7 @@
 
     <groupId>com.mytests.springBoot.autoconfiguration</groupId>
     <artifactId>springfactorytest4</artifactId>
-    <version>1.0.0</version>
+    <version>15</version>
     <modules>
         <module>my-autoconfiguration-bundle4</module>
         <module>use-my-autoconfiguration-bundle4</module>

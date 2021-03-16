@@ -44,7 +44,7 @@
         <dependency>
             <groupId>com.mytests.springBoot.autoconfiguration</groupId>
             <artifactId>my-autoconfiguration-bundle4</artifactId>
-            <version>1.0.0</version>
+            <version>15</version>
         </dependency>
     </dependencies>
 
