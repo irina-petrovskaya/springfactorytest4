@@ -15,7 +15,7 @@ public class MainConfig {
 
     @Bean("__bean1")
     @ConditionalOnProperty(prefix = "myprops", name = "b1", havingValue = "true", matchIfMissing = false)
-    public Bean1 bean1 () {
+    public Bean1 bean1() {
         return new Bean1("bean1 conditional on myprops.b1==true");
     }
 
