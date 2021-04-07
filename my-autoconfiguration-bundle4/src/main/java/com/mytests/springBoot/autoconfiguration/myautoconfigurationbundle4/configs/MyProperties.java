@@ -1,4 +1,4 @@
-package com.mytests.springboot.autoconfiguration.bundle4usage.usemyautoconfigurationbundle4;
+package com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
