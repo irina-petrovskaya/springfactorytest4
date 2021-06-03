@@ -2,8 +2,10 @@ package com.mytests.springboot.autoconfiguration.bundle4usage.usemyautoconfigura
 
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean1;
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean2;
+import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.beans.Bean3;
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.ConditionalComponent1;
 import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.MainConfig;
+import com.mytests.springBoot.autoconfiguration.myautoconfigurationbundle4.configs.Service1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -35,6 +37,12 @@ public class UsageCompo {
     @Autowired(required = false)
     private Bean2 __bean2;
 
+    @Autowired(required = false)
+    Service1 __service1;
+
+    @Autowired(required = false)
+    Bean3 __b3;
+
     public void displayResults() {
         System.out.println("autowired conditional beans:");
         System.out.println(mainConfig.toString());
@@ -56,7 +64,18 @@ public class UsageCompo {
         else {
             System.out.println("no beans of Bean2 type are available");
         }
-
+        if (this.__service1 != null) {
+            System.out.println(__service1.getId());
+        }
+        else {
+            System.out.println("no beans of Service1 type are available");
+        }
+        if (this.__b3 != null) {
+            System.out.println(__b3.toString());
+        }
+        else {
+            System.out.println("no beans of Bean3 type are available");
+        }
 
     }
 }

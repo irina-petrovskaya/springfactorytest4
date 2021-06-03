@@ -12,6 +12,7 @@ public class MyProperties {
     private boolean b1;
     private boolean b2;
     private boolean comp1;
+    private boolean serv1;
 
     public boolean isB1() {
         return b1;
@@ -51,5 +52,13 @@ public class MyProperties {
 
     public void setProp2(String prop2) {
         this.prop2 = prop2;
+    }
+
+    public boolean isServ1() {
+        return serv1;
+    }
+
+    public void setServ1(boolean serv1) {
+        this.serv1 = serv1;
     }
 }
